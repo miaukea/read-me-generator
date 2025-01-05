@@ -26,6 +26,12 @@ const questions = [
                 name: 'usage'
             },
             {
+                type: 'list',
+                message: 'Which license will you be using for your project?',
+                name: 'license',
+                choices: ['Apache License 2.0', 'Eclipse Public License 2.0', 'GNU General Public License v3.0', 'MIT License', 'Mozilla Public License 2.0', 'Proprietary License', 'The Unlicense']
+            },
+            {
                 type: 'input',
                 message: 'Who are the contributors of the project?',
                 name: 'contributing'
@@ -34,6 +40,16 @@ const questions = [
                 type: 'input',
                 message: 'Please include the test instructions for the project:',
                 name: 'test'
+            },
+            {
+                type: 'input',
+                message: 'What is your GitHub name?',
+                name: 'github'
+            },
+            {
+                type: 'input',
+                message: 'What is your email?',
+                name: 'email'
             }
         ]).then((response) => {
             const readmeContent = writeToFile(response);
@@ -46,11 +62,19 @@ const questions = [
 ];
 
 // TODO: Create a function to write README file
-const writeToFile = ({title, description, instructions, usage, contributing, test}) => {
+const writeToFile = ({title, description, instructions, usage, license, contributing, test, github, email}) => {
     `# ${title}
 
     ## Description
     ${description}
+
+    ## Table of Contents
+    - [Installation]()
+    - [Usage]()
+    - [License]()
+    - [Contributing]()
+    - [Tests]()
+    - [Questions]()
 
     ## Installation
     ${instructions}
@@ -58,11 +82,19 @@ const writeToFile = ({title, description, instructions, usage, contributing, tes
     ## Usage
     ${usage}
 
+    ## License
+    ${license}
+
     ## Contributing
     ${contributing}
 
     ## Tests
     ${test}
+
+    ## Questions
+    https://github.com/${github}
+
+    If you have any questions about the following repository, please feel free to reach me at ${email}
     `;
 }
 
