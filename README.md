@@ -41,4 +41,7 @@
   https://github.com/miaukea
 
   If you have any questions about the following repository, please feel free to reach me at [meliaukea@gmail.com](mailto:meliaukea@gmail.com)
+
+  ## Demo Video
+  https://drive.google.com/file/d/1s1W6ru1kUcQyrlOGenlTo9Fcn73w2SWN/view?usp=sharing
   
