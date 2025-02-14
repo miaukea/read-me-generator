@@ -52,7 +52,6 @@ export function generateMarkdown(data) {
   ## Usage
   ${data.usage}
 
-  ## License
   ${renderLicenseSection(data.license)}
 
   ## Contributing
